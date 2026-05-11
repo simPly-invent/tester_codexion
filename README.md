@@ -1,7 +1,4 @@
 # 🧪 test_codexion.sh
-
-*This project has been created as part of the 42 curriculum by mobenais.*
-
 ---
 
 ## 📋 Description
@@ -41,7 +38,7 @@ votre_projet/
 
 ---
 
-## 🚀 Instructions
+##  Instructions
 
 ### 1. Rendre le script exécutable
 
@@ -75,7 +72,7 @@ make re
 
 ---
 
-## 🎯 Arguments du programme
+##  Arguments du programme
 
 | Position | Argument         | Type    | Description                                 | Exemple  |
 |----------|------------------|---------|---------------------------------------------|----------|
@@ -101,7 +98,7 @@ make re
 
 ---
 
-## 🧩 Sections de tests
+##  Sections de tests
 
 | Section | Nom                      | Description                                                        |
 |---------|--------------------------|--------------------------------------------------------------------|
@@ -119,7 +116,7 @@ make re
 
 ---
 
-## 📺 Affichage en temps réel
+##  Affichage en temps réel
 
 Pendant chaque test, le terminal affiche simultanément :
 
@@ -139,7 +136,7 @@ Pendant chaque test, le terminal affiche simultanément :
 
 ---
 
-## ✅ Format de sortie attendu
+##  Format de sortie attendu
 
 Chaque ligne produite par le programme doit respecter **exactement** ce format :
 
@@ -170,7 +167,7 @@ Chaque ligne produite par le programme doit respecter **exactement** ce format :
 
 ---
 
-## 📊 Résumé final
+##  Résumé final
 
 À la fin du script, un résumé s'affiche :
 
@@ -192,7 +189,7 @@ Total : 32 | OK : 30 | KO : 2
 
 ---
 
-## 🐛 Erreurs courantes
+##  Erreurs courantes
 
 | Erreur observée                          | Cause probable                               |
 |------------------------------------------|----------------------------------------------|
@@ -206,7 +203,7 @@ Total : 32 | OK : 30 | KO : 2
 
 ---
 
-## 🔧 Personnalisation
+##  Personnalisation
 
 Pour modifier les timeouts ou les arguments de test, édite directement le script :
 
@@ -219,7 +216,7 @@ test_normal "Stress / 20 coders / fifo" "20 3000 100 100 100 3 10 fifo" 60
 
 ---
 
-## 📝 Notes
+##  Notes
 
 - Les tests **Valgrind** sont automatiquement ignorés si `valgrind` n'est pas installé
 - Le script **s'arrête immédiatement** si la compilation échoue (section 0)
