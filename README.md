@@ -1,7 +1,7 @@
-# 🧪 test_codexion.sh
+#  test_codexion.sh
 ---
 
-## 📋 Description
+##  Description
 
 `test_codexion.sh` est un script de test automatique pour le projet **codexion**.  
 Il vérifie la compilation, la gestion des arguments, le comportement des schedulers,
@@ -14,7 +14,7 @@ Chaque test affiche en temps réel :
 
 ---
 
-## 📁 Structure requise
+##  Structure requise
 
 ```
 votre_projet/
@@ -27,7 +27,7 @@ votre_projet/
 
 ---
 
-## ⚙️ Prérequis
+##  Prérequis
 
 | Outil      | Obligatoire   | Usage                          |
 |------------|---------------|--------------------------------|
