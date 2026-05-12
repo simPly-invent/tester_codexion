@@ -915,37 +915,37 @@ for i in $(seq 1 "$nb_coders"); do
     prev_action=""
     order_ok=1
     while IFS= read -r action; do
-        [ -z "$action" ] && continue
         case "$prev_action" in
             "")
-                # Premier événement : doit être "has taken"
-                if [ "$action" != "has taken a dongle" ]; then
+                if [ "$action" != "has taken" ]; then
                     order_ok=0; break
                 fi
                 ;;
-            "has taken a dongle")
-                if [ "$action" != "is compiling" ]; then
+            "has taken")
+                # Soit 2ème "has taken" (double dongle), soit "is compiling"
+                if [ "$action" != "has taken" ] && [ "$action" != "is compiling" ]; then
                     order_ok=0; break
                 fi
                 ;;
             "is compiling")
-                # Accepte refactoring OU debugging (ordre variable selon impl.)
-                if [ "$action" != "is refactoring" ] && \
-                   [ "$action" != "is debugging" ]; then
+                if [ "$action" != "is refactoring" ]; then
                     order_ok=0; break
                 fi
                 ;;
-            "is refactoring"|"is debugging")
-                # Peut enchaîner l'autre étape, reprendre (has taken) ou finir (burned out)
-                if [ "$action" != "is refactoring" ] && \
-                   [ "$action" != "is debugging" ]   && \
-                   [ "$action" != "has taken a dongle" ] && \
-                   [ "$action" != "burned out" ]; then
+            "is refactoring")
+                if [ "$action" != "is debugging" ]; then
+                    order_ok=0; break
+                fi
+                ;;
+            "is debugging")
+                # Nouveau cycle ou fin
+                if [ "$action" != "has taken" ] && \
+                [ "$action" != "burned out" ] && \
+                [ -n "$action" ]; then
                     order_ok=0; break
                 fi
                 ;;
             "burned out")
-                # Rien ne doit suivre un burnout
                 order_ok=0; break
                 ;;
         esac
